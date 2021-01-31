@@ -34,8 +34,15 @@ namespace FirstCSharpProgram
             //int x = (4 + 3) * 2; // () has the highest operator precedence
             //Console.WriteLine(x); // 14
 
-            int x = (2 + 3) * 3;
-            Console.WriteLine(x); // 15
+            //int x = (2 + 3) * 3;
+            //Console.WriteLine(x); // 15
+
+            int x = 42;
+            x += 2; // equivalent to x = x + 2
+            Console.WriteLine(x);
+
+            x -= 6; // equivalent to x = x - 6
+            Console.WriteLine(x);
         }
     }
 }
