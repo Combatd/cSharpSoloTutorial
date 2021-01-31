@@ -24,9 +24,18 @@ namespace FirstCSharpProgram
             //int z = x * y;
             //Console.WriteLine(z);
 
-            int x = 16;
-            int y = 5;
-            Console.WriteLine(x / y); // 3, rounded down to int
+            //int x = 16;
+            //int y = 5;
+            //Console.WriteLine(x / y); // 3, rounded down to int
+
+            //int x = 4 + 3 * 2; // * has operator precedence over +
+            //Console.WriteLine(x); // 10
+
+            //int x = (4 + 3) * 2; // () has the highest operator precedence
+            //Console.WriteLine(x); // 14
+
+            int x = (2 + 3) * 3;
+            Console.WriteLine(x); // 15
         }
     }
 }
