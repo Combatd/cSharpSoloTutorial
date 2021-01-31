@@ -19,10 +19,14 @@ namespace FirstCSharpProgram
             //Console.WriteLine("Name: " + name);
             //Console.WriteLine("Age: " + Convert.ToInt32(age));
 
-            int x = 42;
-            int y = 7;
-            int z = x * y;
-            Console.WriteLine(z);
+            //int x = 42;
+            //int y = 7;
+            //int z = x * y;
+            //Console.WriteLine(z);
+
+            int x = 16;
+            int y = 5;
+            Console.WriteLine(x / y); // 3, rounded down to int
         }
     }
 }
