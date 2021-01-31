@@ -14,10 +14,15 @@ namespace FirstCSharpProgram
             //int age = Convert.ToInt32(Console.ReadLine());
             //Console.WriteLine("You are {0} years old in 32-bit integers", age);
 
-            string name = Console.ReadLine();
-            string age = Console.ReadLine();
-            Console.WriteLine("Name: " + name);
-            Console.WriteLine("Age: " + Convert.ToInt32(age));
+            //string name = Console.ReadLine();
+            //string age = Console.ReadLine();
+            //Console.WriteLine("Name: " + name);
+            //Console.WriteLine("Age: " + Convert.ToInt32(age));
+
+            int x = 42;
+            int y = 7;
+            int z = x * y;
+            Console.WriteLine(z);
         }
     }
 }
