@@ -37,12 +37,25 @@ namespace FirstCSharpProgram
             //int x = (2 + 3) * 3;
             //Console.WriteLine(x); // 15
 
-            int x = 42;
-            x += 2; // equivalent to x = x + 2
-            Console.WriteLine(x);
+            //int x = 42;
+            //x += 2; // equivalent to x = x + 2
+            //Console.WriteLine(x);
 
-            x -= 6; // equivalent to x = x - 6
-            Console.WriteLine(x);
+            //x -= 6; // equivalent to x = x - 6
+            //Console.WriteLine(x);
+
+            // Prefix: x is 4, y is 4
+            int x = 3;
+            int y = ++x;
+            Console.WriteLine(x + " " + y);
+
+            // Postfix: a is 4, b is 3
+            int a = 3;
+            int b = a++;
+            Console.WriteLine(a + " " + b);
+
+            // ++x increments x's value before using it
+            // x++ uses x's value then increments it
         }
     }
 }
