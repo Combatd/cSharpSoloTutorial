@@ -25,14 +25,29 @@ namespace ConditionalsAndLoops
             //}
 
 
-            int a = 8;
-            int b = ++a; // prefix on a, so a gets incremented by 1 to 9, then that value is assigned to b
-            if (a > 5)
-                b -= 3;
-            else
-                b = 9;
-            Console.WriteLine(b); // a meets the first condition, so it subtracts 3 from b and returns 6 
+            //int a = 8;
+            //int b = ++a; // prefix on a, so a gets incremented by 1 to 9, then that value is assigned to b
+            //if (a > 5)
+            //    b -= 3;
+            //else
+            //    b = 9;
+            //Console.WriteLine(b); // a meets the first condition, so it subtracts 3 from b and returns 6 
 
+            int x = 18;
+            switch(x) {
+                case 10:
+                    Console.WriteLine("Ten");
+                    break;
+
+                case 20:
+                    Console.WriteLine("Twenty");
+                    break;
+
+                default:
+                    Console.WriteLine("No match");
+                    break;
+            }
+            
         }
     }
 }
