@@ -15,14 +15,23 @@ namespace ConditionalsAndLoops
 
             // Fill in the blanks to find the larger of two variables.
 
-            int a = 42;
-            int b = 88;
+            //int a = 42;
+            //int b = 88;
 
-            if (a > b) {
-                Console.WriteLine(a);
-            } else {
-                Console.WriteLine(b);
-            }
+            //if (a > b) {
+            //    Console.WriteLine(a);
+            //} else {
+            //    Console.WriteLine(b);
+            //}
+
+
+            int a = 8;
+            int b = ++a; // prefix on a, so a gets incremented by 1 to 9, then that value is assigned to b
+            if (a > 5)
+                b -= 3;
+            else
+                b = 9;
+            Console.WriteLine(b); // a meets the first condition, so it subtracts 3 from b and returns 6 
 
         }
     }
