@@ -33,21 +33,32 @@ namespace ConditionalsAndLoops
             //    b = 9;
             //Console.WriteLine(b); // a meets the first condition, so it subtracts 3 from b and returns 6 
 
-            int x = 18;
-            switch(x) {
-                case 10:
-                    Console.WriteLine("Ten");
-                    break;
+            //int x = 18;
+            //switch(x) {
+            //    case 10:
+            //        Console.WriteLine("Ten");
+            //        break;
 
-                case 20:
-                    Console.WriteLine("Twenty");
-                    break;
+            //    case 20:
+            //        Console.WriteLine("Twenty");
+            //        break;
 
-                default:
-                    Console.WriteLine("No match");
-                    break;
+            //    default:
+            //        Console.WriteLine("No match");
+            //        break;
+            //}
+
+            // Fill in the blanks to display the value of x to the screen three times.
+            int x = 42;
+
+            int num = 0;
+
+            while (num < 3) {
+                Console.WriteLine(x);
+                num++;
             }
-            
+
+
         }
     }
 }
