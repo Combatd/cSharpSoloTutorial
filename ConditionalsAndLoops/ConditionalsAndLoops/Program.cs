@@ -49,16 +49,21 @@ namespace ConditionalsAndLoops
             //}
 
             // Fill in the blanks to display the value of x to the screen three times.
-            int x = 42;
+            //int x = 42;
 
+            //int num = 0;
+
+            //while (num < 3) {
+            //    Console.WriteLine(x);
+            //    num++;
+            //}
+
+            // Fill in the blanks to increment the value of num by 2 to display only even values.
             int num = 0;
-
-            while (num < 3) {
-                Console.WriteLine(x);
-                num++;
+            while (num < 100) {
+                Console.WriteLine(num);
+                num += 2;
             }
-
-
         }
     }
 }
