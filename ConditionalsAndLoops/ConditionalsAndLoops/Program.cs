@@ -59,11 +59,21 @@ namespace ConditionalsAndLoops
             //}
 
             // Fill in the blanks to increment the value of num by 2 to display only even values.
-            int num = 0;
-            while (num < 100) {
-                Console.WriteLine(num);
-                num += 2;
+            //int num = 0;
+            //while (num < 100)
+            //{
+            //    Console.WriteLine(num);
+            //    num += 2;
+            //}
+
+            int x = 1;
+            while (x++ < 5) { // add to iterator in condition
+                // loop executes twice
+                if (x % 2 == 0) {
+                    x += 2;
+                }
             }
+
         }
     }
 }
