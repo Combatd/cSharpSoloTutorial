@@ -66,12 +66,28 @@ namespace ConditionalsAndLoops
             //    num += 2;
             //}
 
+            //int x = 1;
+            //while (x++ < 5) { // add to iterator in condition
+            //    // loop executes twice
+            //    if (x % 2 == 0) {
+            //        x += 2;
+            //    }
+            //}
+
+            // for (initial, condition, increment)
+            //for (int x = 5; x < 10; x++) {
+            //    Console.WriteLine(x); // print out 5 to 9
+            //}
+
+            // Print all even values from 0 to 100
+            //for (int x = 0; x < 100; x += 2) {
+            //    Console.WriteLine(x);
+            //}
+
+            // init and increment can be left out if not needed, but put semicolons
             int x = 1;
-            while (x++ < 5) { // add to iterator in condition
-                // loop executes twice
-                if (x % 2 == 0) {
-                    x += 2;
-                }
+            for (; x < 7;) {
+                x += 2;
             }
 
         }
