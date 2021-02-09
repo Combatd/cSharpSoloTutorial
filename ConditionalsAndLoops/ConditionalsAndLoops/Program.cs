@@ -91,12 +91,22 @@ namespace ConditionalsAndLoops
             //}
 
             // do while loops execute the code block at least once
-            int x = 0;
-            do
+            //int x = 0;
+            //do
+            //{
+            //    Console.WriteLine(x);
+            //    x += 2;
+            //} while (x < 10);
+
+            // break stops a loop, can be put inside a conditional
+            for (int x = 1; x < 8; x++)
             {
-                Console.WriteLine(x);
-                x += 2;
-            } while (x < 10);
+                if (x > 5)
+                    break;
+                Console.WriteLine(x); // 5 is the largest number printed
+            }
+            
+
         }
     }
 }
