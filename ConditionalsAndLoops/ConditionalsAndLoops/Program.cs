@@ -99,13 +99,22 @@ namespace ConditionalsAndLoops
             //} while (x < 10);
 
             // break stops a loop, can be put inside a conditional
-            for (int x = 1; x < 8; x++)
+            //for (int x = 1; x < 8; x++)
+            //{
+            //    if (x > 5)
+            //        break;
+            //    Console.WriteLine(x); // 5 is the largest number printed
+            //}
+
+            // continue skips the current iteration of a loop, can be put inside a conditional
+            for (int x = 0; x < 99; x++)
             {
-                if (x > 5)
-                    break;
-                Console.WriteLine(x); // 5 is the largest number printed
+                if (x % 2 != 0) // if number is odd
+                    continue;
+
+                Console.WriteLine(x);
+
             }
-            
 
         }
     }
