@@ -107,14 +107,20 @@ namespace ConditionalsAndLoops
             //}
 
             // continue skips the current iteration of a loop, can be put inside a conditional
-            for (int x = 0; x < 99; x++)
-            {
-                if (x % 2 != 0) // if number is odd
-                    continue;
+            //for (int x = 0; x < 99; x++)
+            //{
+            //    if (x % 2 != 0) // if number is odd
+            //        continue;
 
-                Console.WriteLine(x);
+            //    Console.WriteLine(x);
 
-            }
+            //}
+
+            int x = 5; int y = 12; // a remainder exists for the second condition
+            if (x > 10 || y / x > 1)
+                Console.Write(y - x); // 7
+            else
+                Console.Write(y);
 
         }
     }
