@@ -15,10 +15,21 @@ The     program you are given takes N number as input.
         static void Main(string[] args)
         {
             int number = Convert.ToInt32(Console.ReadLine());
-
             // your code goes here
+            string output = "";
 
+            for (int i = 1; i <= number; i++)
+            {
+                if (i % 3 == 0)
+                {
+                    output += "*";
+                } else
+                {
+                    output += i.ToString();
+                }
+            }
 
+            Console.WriteLine(output);
         }
     }
 }
