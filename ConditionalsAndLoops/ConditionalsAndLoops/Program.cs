@@ -116,12 +116,35 @@ namespace ConditionalsAndLoops
 
             //}
 
-            int x = 5; int y = 12; // a remainder exists for the second condition
-            if (x > 10 || y / x > 1)
-                Console.Write(y - x); // 7
-            else
-                Console.Write(y);
+            //int x = 5; int y = 12; // a remainder exists for the second condition
+            //if (x > 10 || y / x > 1)
+            //    Console.Write(y - x); // 7
+            //else
+            //    Console.Write(y);
 
+
+            //int age = 42;
+            //string msg;
+            //if (age >= 18)
+            //    msg = "Welcome";
+            //else
+            //    msg = "Sorry";
+
+            //Console.WriteLine(msg);
+
+            /*
+             * The code above checks the value of the age variable and 
+             * displays the corresponding message to the screen.
+                This can be done in a more elegant and shorter way by using the ?: operator,
+                which has the following form:
+
+                Exp1 ? Exp2 : Exp3
+             */
+
+            int age = 42;
+            string msg;
+            msg = (age >= 18) ? "Welcome" : "Sorry";
+            Console.WriteLine(msg);
         }
     }
 }
