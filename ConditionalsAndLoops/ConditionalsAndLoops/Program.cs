@@ -141,10 +141,36 @@ namespace ConditionalsAndLoops
                 Exp1 ? Exp2 : Exp3
              */
 
-            int age = 42;
-            string msg;
-            msg = (age >= 18) ? "Welcome" : "Sorry";
-            Console.WriteLine(msg);
+            //int age = 42;
+            //string msg;
+            //msg = (age >= 18) ? "Welcome" : "Sorry";
+            //Console.WriteLine(msg);
+
+            BasicCalculator();
+
         }
+
+        static void BasicCalculator()
+        {
+
+            do
+            {
+                Console.Write("x = ");
+                string str = Console.ReadLine();
+                if (str == "exit")
+                    break;
+
+                int x = Convert.ToInt32(str);
+
+                Console.Write("y = ");
+                int y = Convert.ToInt32(Console.ReadLine());
+
+                int sum = x + y;
+                Console.WriteLine("Result: {0}", sum);
+            }
+            while (true);
+
+        }
+
     }
 }
