@@ -85,11 +85,18 @@ namespace ConditionalsAndLoops
             //}
 
             // init and increment can be left out if not needed, but put semicolons
-            int x = 1;
-            for (; x < 7;) {
-                x += 2;
-            }
+            //int x = 1;
+            //for (; x < 7;) {
+            //    x += 2;
+            //}
 
+            // do while loops execute the code block at least once
+            int x = 0;
+            do
+            {
+                Console.WriteLine(x);
+                x += 2;
+            } while (x < 10);
         }
     }
 }
