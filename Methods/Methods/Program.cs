@@ -186,14 +186,50 @@ namespace Methods
              */
 
             // Swap the values of two arguments by passing references to memory location
-            static void Swap(ref int x, ref int y)
+            //static void Swap(ref int x, ref int y)
+            //{
+            //    int temp;
+            //    temp = x; // copy value over to temp variable
+            //    x = y; // x gets overwritten with the value of y at the same memory address
+            //    y = temp; // the y arg gets overwritten with the value of temp at its memory address
+            //}
+
+
+
+            /*
+             Output parameters are similar to reference parameters,
+             except that they transfer data out of the method rather than accept data in.
+             They are defined using the out keyword.
+             The variable supplied for the output parameter need not be initialized since that value will not be used.
+             Output parameters are particularly useful when you need to return multiple values from a method.
+
+                static void GetValues(out int x, out int y)
+                {
+                    x = 5;
+                    y = 42;
+                }
+                static void Main(string[] args)
+                {
+                    int a, b;
+                    GetValues(out a, out b);
+                    Console.WriteLine(a+" "+b);
+                }
+
+             Similar to the ref keyword, the out keyword is used both when defining the method and when calling it.
+
+             
+             */
+
+
+            // Ask for user input in method and return a value entered using output parameters
+
+            static void Ask(out string name)
             {
-                int temp;
-                temp = x; // copy value over to temp variable
-                x = y; // x gets overwritten with the value of y at the same memory address
-                y = temp; // the y arg gets overwritten with the value of temp at its memory address
+                name = Console.ReadLine();
             }
 
+            string nm; // will be assigned a value from an output parameter
+            Ask(out nm);
         }
     }
 }
