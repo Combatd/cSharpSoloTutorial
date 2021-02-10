@@ -223,13 +223,86 @@ namespace Methods
 
             // Ask for user input in method and return a value entered using output parameters
 
-            static void Ask(out string name)
+            //static void Ask(out string name)
+            //{
+            //    name = Console.ReadLine();
+            //}
+
+            //string nm; // will be assigned a value from an output parameter
+            //Ask(out nm);
+
+
+
+            /*
+              Method overloading is when multiple methods have the same name, but different parameters.
+              For example, you might have a Print method that outputs its parameter to the console window:
+
+            void Print(int a)
             {
-                name = Console.ReadLine();
+              Console.WriteLine("Value: "+a);
             }
 
-            string nm; // will be assigned a value from an output parameter
-            Ask(out nm);
+            The + operator is used to concatenate values. In this case, the value of a is joined to the text "Value: ".
+            This method accepts an integer argument only.
+            Overloading it will make it available for other types, such as double
+
+            void Print(double a)
+            {
+              Console.WriteLine("Value: "+a);
+            }
+
+            Now, the same Print method name will work for both integers and doubles.
+
+             */
+
+
+            /*
+                When overloading methods, the definitions of the methods must differ from each other by the types and/or number of parameters.
+                When there are overloaded methods, the method called is based on the arguments.
+                An integer argument will call the method implementation that accepts an integer parameter.
+                A double argument will call the implementation that accepts a double parameter.
+                Multiple arguments will call the implementation that accepts the same number of arguments.
+
+                        static void Print(int a) {
+                            Console.WriteLine("Value: " + a);
+                        }
+                        static void Print(double a) {
+                            Console.WriteLine("Value: " + a);
+                        }
+                        static void Print(string label, double a) {
+                            Console.WriteLine(label + a);
+                        }
+                        static void Main(string[] args)
+                        {
+                            Print(11);
+                            Print(4.13);
+                            Print("Average: ", 7.57);
+                        }
+
+
+                You cannot overload method declarations that differ only by return type.
+                The following declaration results in an error.
+                int PrintName(int a) { }
+                float PrintName(int b) { }
+                double PrintName(int c) { }
+
+             */
+
+            // look at member function Print in class Program
+            Print(3);
+
+
+
+        }
+
+        // This overloaded method will still take the integer and multiply it as it prints to terminal
+        static void Print(int a)
+        {
+            Console.WriteLine(a * a);
+        }
+        static void Print(double a)
+        {
+            Console.WriteLine(a + a);
         }
     }
 }
