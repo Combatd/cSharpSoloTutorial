@@ -40,6 +40,30 @@ namespace Methods
                 Console.WriteLine("Welcome");
             }
 
+
+
+            /*
+             Method declarations can define a list of parameters to work with.
+             Parameters are variables that accept the values passed into the method when called.
+
+            void Print(int x) 
+            {
+              Console.WriteLine(x);
+            }
+
+             Parameters behave within the method similarly to other local variables.
+             They are created upon entering the method and are destroyed upon exiting the method.
+
+             */
+
+            // Declare a method and call it from Main with the argument 88
+
+            static void func(int x)
+            {
+                Console.WriteLine(x / 2);
+            }
+
+            func(88);
         }
     }
 }
