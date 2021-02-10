@@ -125,19 +125,74 @@ namespace Methods
 
 
             // Call #calc using named arguments with values 5 for "from, 99 for "to" and 2 for "step"
-            static int calc(int from, int to, int step = 1)
+            //static int calc(int from, int to, int step = 1)
+            //{
+            //    int res = 0;
+            //    for (int i = from; i < to; i += step)
+            //    {
+            //        res += 1;
+            //    }
+            //    return res;
+            //}
+
+            //int res = calc(step: 2, to: 99, from: 5);
+            //Console.WriteLine(res);
+
+
+
+
+            /*
+             There are three ways to pass arguments to a method when the method is called:
+             By value, By reference, and as Output.
+
+             By value copies the argument's value into the method's formal parameter.
+             Here, we can make changes to the parameter within the method without having any effect on the argument.
+
+            static void Sqr(int x)
             {
-                int res = 0;
-                for (int i = from; i < to; i += step)
-                {
-                    res += 1;
-                }
-                return res;
+                x = x * x;
+            }
+            static void Main(string[] args)
+            {
+                int a = 3;
+                Sqr(a);
+            
+                Console.WriteLine(a);
             }
 
-            int res = calc(step: 2, to: 99, from: 5);
-            Console.WriteLine(res);
+             */
 
+
+
+            /*
+             Pass by reference copies an argument's memory address into the formal parameter.
+             Inside the method, the address is used to access the actual argument used in the call.
+             This means that changes made to the parameter affect the argument.
+             To pass the value by reference, the ref keyword is used in both the call and the method definition:
+
+            static void Sqr(ref int x)
+            {
+                x = x * x;
+            }
+            static void Main(string[] args)
+            {
+                int a = 3;
+                Sqr(ref a);
+            
+                Console.WriteLine(a);
+            }
+
+            The ref keyword passes the memory address to the method parameter, which allows the method to operate on the actual variable.
+             */
+
+            // Swap the values of two arguments by passing references to memory location
+            static void Swap(ref int x, ref int y)
+            {
+                int temp;
+                temp = x; // copy value over to temp variable
+                x = y; // x gets overwritten with the value of y at the same memory address
+                y = temp; // the y arg gets overwritten with the value of temp at its memory address
+            }
 
         }
     }
