@@ -103,12 +103,41 @@ namespace Methods
              To do this, assign values to the parameters in the method definition, as shown in this example.
              */
 
-            static int Vol(int x, int y = 3, int z = 1)
+            //static int Vol(int x, int y = 3, int z = 1)
+            //{
+            //    return x * y * z;
+            //}
+
+            //Console.WriteLine(Vol(2, 4)); // 8
+
+
+            /*
+             Named arguments free you from the need to remember the order of the parameters in a method call.
+             Each argument can be specified by the matching parameter name.
+
+             When calling the method, you can use the parameter names to provide the arguments in any order you like:
+
+             Named arguments use the name of the parameter followed by a colon and the value.
+
+             int res = Area(w: 5, h: 8);
+             Console.WriteLine(res);
+             */
+
+
+            // Call #calc using named arguments with values 5 for "from, 99 for "to" and 2 for "step"
+            static int calc(int from, int to, int step = 1)
             {
-                return x * y * z;
+                int res = 0;
+                for (int i = from; i < to; i += step)
+                {
+                    res += 1;
+                }
+                return res;
             }
 
-            Console.WriteLine(Vol(2, 4)); // 8
+            int res = calc(step: 2, to: 99, from: 5);
+            Console.WriteLine(res);
+
 
         }
     }
