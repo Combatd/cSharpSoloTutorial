@@ -35,10 +35,10 @@ namespace Methods
              */
 
             // Write a static method that does not return a value
-            static void Greet()
-            {
-                Console.WriteLine("Welcome");
-            }
+            //static void Greet()
+            //{
+            //    Console.WriteLine("Welcome");
+            //}
 
 
 
@@ -58,12 +58,43 @@ namespace Methods
 
             // Declare a method and call it from Main with the argument 88
 
-            static void func(int x)
+            //static void func(int x)
+            //{
+            //    Console.WriteLine(x / 2);
+            //}
+
+            //func(88);
+
+
+            /*
+             You can have as many parameters as needed for a method by separating them with commas in the definition.
+
+
+                int Sum(int x, int y)
+                {
+                   return x+y;
+                }
+
+              The Sum method takes two integers and returns their sum.
+              This is why the return type of the method is int.
+              Data type and name should be defined for each parameter.
+
+             */
+
+            int Max(int a, int b)
             {
-                Console.WriteLine(x / 2);
+                if (a > b)
+                {
+                    return a;
+                } else
+                {
+                    return b;
+                }
             }
 
-            func(88);
+            Console.WriteLine(Max(5, 7));
+            
+
         }
     }
 }
