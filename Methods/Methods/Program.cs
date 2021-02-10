@@ -81,19 +81,34 @@ namespace Methods
 
              */
 
-            int Max(int a, int b)
+            //int Max(int a, int b)
+            //{
+            //    if (a > b)
+            //    {
+            //        return a;
+            //    } else
+            //    {
+            //        return b;
+            //    }
+            //}
+
+            //Console.WriteLine(Max(5, 7));
+
+
+
+            /*
+             When defining a method, you can specify a default value for optional parameters.
+             Note that optional parameters must be defined after required parameters.
+             If corresponding arguments are missing when the method is called, the method uses the default values.
+             To do this, assign values to the parameters in the method definition, as shown in this example.
+             */
+
+            static int Vol(int x, int y = 3, int z = 1)
             {
-                if (a > b)
-                {
-                    return a;
-                } else
-                {
-                    return b;
-                }
+                return x * y * z;
             }
 
-            Console.WriteLine(Max(5, 7));
-            
+            Console.WriteLine(Vol(2, 4)); // 8
 
         }
     }
