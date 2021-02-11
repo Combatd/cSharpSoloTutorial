@@ -314,6 +314,10 @@ namespace Methods
 
             DrawPyramid(5);
 
+            int a; // a gets a value from the output function Test where x = 6
+            int z = Test(out a);
+            Console.WriteLine(a + z);
+
         }
 
         // This overloaded method will still take the integer and multiply it as it prints to terminal
@@ -365,6 +369,12 @@ namespace Methods
              The final Console.WriteLine(); statement moves the cursor to the next row.
              */
 
+        }
+
+        static int Test(out int x, int y = 4)
+        {
+            x = 6;
+            return x * y;
         }
 
     }
