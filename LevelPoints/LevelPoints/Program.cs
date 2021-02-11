@@ -23,7 +23,15 @@ namespace LevelPoints
 
         static int Points(int levels)
         {
-            return 0;
+            // base case (exit condition)
+            if (levels == 1)
+            {
+                return 1;
+            }
+
+            int totalPoints = levels;
+            totalPoints += Points(levels - 1);
+            return totalPoints;
         }
 
     }
