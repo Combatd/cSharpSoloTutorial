@@ -291,7 +291,26 @@ namespace Methods
             // look at member function Print in class Program
             Print(3);
 
+            /*
+             A recursive method is a method that calls itself.
+             One of the classic tasks that can be solved easily by recursion is calculating the factorial of a number.
+             In mathematics, the term factorial refers to the product of all positive integers that are less than or equal to a specific non-negative integer (n).
+             The factorial of n is denoted as n!
 
+             4! = 4 * 3 * 2 * 1 = 24
+             */
+
+
+            /*
+             In the Fact recursive method, the if statement defines the exit condition, a base case that requires no recursion.
+             In this case, when num equals one, the solution is simply to return 1 (the factorial of one is one).
+             The recursive call is placed after the exit condition and returns num multiplied by the factorial of n-1.
+             For example, if you call the Fact method with the argument 4, it will execute as follows:
+
+             return 4*Fact(3), which is 4*3*Fact(2), which is 4*3*2*Fact(1), which is 4*3*2*1.
+             */
+
+            Console.WriteLine(Fact(6));
 
         }
 
@@ -304,5 +323,16 @@ namespace Methods
         {
             Console.WriteLine(a + a);
         }
+
+        static int Fact(int num)
+        {
+            if (num == 1)
+            {
+                return 1;
+            }
+            return num * Fact(num - 1);
+        }
+
+
     }
 }
