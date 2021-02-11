@@ -312,6 +312,8 @@ namespace Methods
 
             Console.WriteLine(Fact(6));
 
+            DrawPyramid(5);
+
         }
 
         // This overloaded method will still take the integer and multiply it as it prints to terminal
@@ -333,6 +335,37 @@ namespace Methods
             return num * Fact(num - 1);
         }
 
+
+        /*
+         DrawPyramid does not need to return a value and takes an integer parameter n.
+         In programming, the step by step logic required for the solution to a problem is called an algorithm. The algorithm for MakePyramid is:
+         1. The first row should contain one star at the top center of the pyramid. The center is calculated based on the number of rows in the pyramid.
+         2. Each row after the first should contain an odd number of stars (1, 3, 5, etc.), until the number of rows is reached.
+         */
+
+        static void DrawPyramid(int n)
+        {
+            for (int i = 1; i <= n; i++)
+            {
+                for (int j = i; j <= n; j++)
+                {
+                    Console.Write("  ");
+                }
+                for (int k = 1; k <= 2 * i - 1; k++)
+                {
+                    Console.Write("*" + " ");
+                }
+                Console.WriteLine();
+            }
+
+            /*
+             The first for loop that iterates through each row of the pyramid contains two for loops.
+             The first inner loop displays the spaces needed before the first star symbol.
+             The second inner loop displays the required number of stars for each row, which is calculated based on the formula (2*i-1) where i is the current row.
+             The final Console.WriteLine(); statement moves the cursor to the next row.
+             */
+
+        }
 
     }
 }
