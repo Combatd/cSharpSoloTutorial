@@ -80,12 +80,46 @@ namespace ClassesAndObjects
                 You can also designate class members as private or protected
                 If no access modifier is defined, the member is private by default.
              */
+
+
+            /*
+             Now that we have our Person class defined, we can instantiate an object of that type in Main.
+             The new operator instantiates an object and returns a reference to its location:
+
+                    class Person {
+                     int age;
+                     string name;
+
+                    public void SayHi() {
+                     Console.WriteLine("Hi");
+                    }
+                   }
+
+
+                    static void Main(string[] args)
+                    {
+                        Person p1 = new Person();
+                        p1.SayHi();
+                    }
+             */
+
+            // Instantiate Car type object and call horn()
+            Car c = new Car();
+            c.horn();
+
+
+
         }
 
         class Car
         {
             string color;
             int year;
+
+            public void horn()
+            {
+                Console.WriteLine("honk");
+            }
         }
     }
 }
