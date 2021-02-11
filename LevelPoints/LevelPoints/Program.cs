@@ -16,7 +16,15 @@ namespace LevelPoints
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            int levels = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine(Points(levels));
         }
+
+        static int Points(int levels)
+        {
+            return 0;
+        }
+
     }
 }
