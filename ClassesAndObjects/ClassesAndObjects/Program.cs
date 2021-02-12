@@ -232,6 +232,67 @@ namespace ClassesAndObjects
                         }
              */
 
+            /*
+             Any accessor of a property can be omitted.
+
+                class Person
+                {
+                  private string name;
+                  public string Name
+                  {
+                    get { return name; }
+                  }
+                }
+
+             */
+
+
+
+            /*
+             So, why use properties? Why not just declare the member variable public and access it directly?
+             With properties you have the option to control the logic of accessing the variable.
+             For example, you can check if the value of age is greater than 0, before assigning it to the variable:
+
+                class Person
+                {
+                  private int age=0;
+                  public int Age
+                  {
+                    get { return age; }
+                    set {
+                      if (value > 0)
+                        age = value;
+                    }
+                  }
+                }
+
+                You can have any custom logic with get and set accessors.
+
+             */
+
+
+            /*
+             When you do not need any custom logic, C# provides a fast and effective mechanism for declaring private members through their properties.
+For example, to create a private member that can only be accessed through the Name property's get and set accessors, use the following syntax:
+
+                public string Name { get; set; }
+
+                As you can see, you do not need to declare the private field name separately - it is created by the property automatically. Name is called an auto-implemented property. Also called auto-properties, they allow for easy and short declaration of private members.
+                We can rewrite the code from our previous example using an auto-property:
+
+                        class Person
+                        {
+                            public string Name { get; set; }
+                        }
+                        static void Main(string[] args)
+                        {
+                            Person p = new Person();
+                            p.Name = "Bob";
+                            Console.WriteLine(p.Name);
+                        }
+                    
+              
+             */
 
         }
 
@@ -286,6 +347,15 @@ namespace ClassesAndObjects
             {
                 get { return age; }
                 set { age = value; }
+            }
+        }
+
+        // declare a class Student, with public method Hello
+        class Student
+        {
+            public void Hello()
+            {
+                Console.WriteLine("hi");
             }
         }
 
