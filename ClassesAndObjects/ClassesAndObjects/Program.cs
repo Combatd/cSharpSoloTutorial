@@ -108,7 +108,48 @@ namespace ClassesAndObjects
             c.horn();
 
 
+            /*
+             * 
+             * You can access all public members of a class using the dot operator.
+               Besides calling a method, you can use the dot operator to make an assignment when valid.
+             * 
+                     class Dog
+                    {
+                        public string name;
+                        public int age;
+                    }
+                    static void Main(string[] args)
+                    {
+                        Dog bob = new Dog();
+                        bob.name = "Bobby";
+                        bob.age = 3;
+            
+                        Console.WriteLine(bob.age);
+                    } 
+             */
 
+
+
+            /*
+             Part of the meaning of the word encapsulation is the idea of "surrounding" an entity, not just to keep what's inside together, but also to protect it.
+             In programming, encapsulation means more than simply combining members together within a class; it also means restricting access to the inner workings of that class.
+             Encapsulation is implemented by using access modifiers. An access modifier defines the scope and visibility of a class member.
+
+             Encapsulation is also called information hiding.
+             */
+
+            /*
+             C# supports the following access modifiers: public, private, protected, internal, protected internal.
+             As seen in the previous examples, the public access modifier makes the member accessible from the outside of the class.
+             The private access modifier makes members accessible only from within the class and hides them from the outside.
+
+             */
+
+
+            BankAccount b = new BankAccount();
+            b.Deposit(199);
+            b.Withdraw(42);
+            Console.WriteLine(b.GetBalance());
         }
 
         class Car
@@ -121,5 +162,24 @@ namespace ClassesAndObjects
                 Console.WriteLine("honk");
             }
         }
+
+        class BankAccount
+        {
+            private double balance = 0;
+            public void Deposit(double n)
+            {
+                balance += n;
+            }
+            public void Withdraw(double n)
+            {
+                balance -= n;
+            }
+            public double GetBalance()
+            {
+                return balance;
+            }
+        }
+
+
     }
 }
