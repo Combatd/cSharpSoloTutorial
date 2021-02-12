@@ -6,7 +6,11 @@ namespace SocialNetwork
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string postText = Console.ReadLine();
+
+            Post post = new Post();
+            post.Text = postText;
+            post.ShowPost();
         }
     }
 }
