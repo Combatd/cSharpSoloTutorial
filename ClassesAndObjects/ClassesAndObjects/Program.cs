@@ -146,10 +146,46 @@ namespace ClassesAndObjects
              */
 
 
+            /*
+             We used encapsulation to hide the balance member from the outside code. Then we provided restricted access to it using public methods. The class data can be read through the GetBalance method and modified only through the Deposit and Withdraw methods.
+             You cannot directly change the balance variable. You can only view its value using the public method. This helps maintain data integrity.
+             We could add different verification and checking mechanisms to the methods to provide additional security and prevent errors.
+             */
+
             BankAccount b = new BankAccount();
             b.Deposit(199);
             b.Withdraw(42);
             Console.WriteLine(b.GetBalance());
+
+            /*
+             A class constructor is a special member method of a class that is executed whenever a new object of that class is created.
+             A constructor has exactly the same name as its class, is public, and does not have any return type
+
+                class Person
+                {
+                  private int age;
+                  public Person()
+                  {
+                    Console.WriteLine("Hi there");
+                  }
+                }
+
+
+                This can be useful in a number of situations.
+                For example, when creating an object of type BankAccount, you could send an email notification to the owner.
+                The same functionality could be achieved using a separate public method.
+                The advantage of the constructor is that it is called automatically.
+
+
+                Constructors can be very useful for setting initial values for certain member variables.
+                A default constructor has no parameters.
+                However, when needed, parameters can be added to a constructor.
+
+                Constructors can be overloaded like any method by using different numbers of parameters.    
+             */
+
+            Person p = new Person("David");
+            Console.WriteLine(p.getName());
         }
 
         class Car
@@ -180,6 +216,20 @@ namespace ClassesAndObjects
             }
         }
 
+
+        class Person
+        {
+            private int age;
+            private string name;
+            public Person(string nm)
+            {
+                name = nm;
+            }
+            public string getName()
+            {
+                return name;
+            }
+        }
 
     }
 }
