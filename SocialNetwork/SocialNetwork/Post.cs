@@ -9,6 +9,10 @@ namespace SocialNetwork
 
         // write a constructor here
 
+        public Post()
+        {
+            Console.WriteLine("New post");
+        }
 
         public void ShowPost()
         {
@@ -16,5 +20,18 @@ namespace SocialNetwork
         }
 
         // write a property for member text
+
+        public string Text
+        {
+            get
+            {
+                return text;
+            }
+
+            set
+            {
+                text = value;
+            }
+        }
     }
 }
