@@ -143,6 +143,24 @@ namespace ArraysAndStrings
             }
             Console.Write(y);
 
+
+
+            /*
+
+                An array can have multiple dimensions. A multidimensional array is declared as follows:
+
+                type[, , … ,] arrayName = new type[size1, size2, …, sizeN];
+
+
+                For example, let's define a two-dimensional 3x4 integer array:
+
+                int[ , ] x = new int[3,4];
+
+             */
+
+            // Declare 2-d array of integers with 8 rows and 8 columns
+            int[, ] chessBoard = new int[8, 8];
+
         }
     }
 }
