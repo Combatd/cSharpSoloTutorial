@@ -330,6 +330,10 @@ namespace ArraysAndStrings
              You could, for example, find the number of times a specific word appears in a book with ease, using those methods.
              */
 
+            // Assing the last character of the string to the x variable
+            string s = "Hello";
+            char x;
+            x = s[s.Length - 1];
         }
     }
 }
