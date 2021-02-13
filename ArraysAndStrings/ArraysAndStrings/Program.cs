@@ -117,6 +117,32 @@ namespace ArraysAndStrings
 
 
 
+            /*
+             The following code uses a foreach loop to calculate the sum of all the elements of an array:
+
+                            int[ ] arr = {11, 35, 62, 555, 989};
+                            int sum = 0; 
+            
+                            foreach (int x in arr) {
+                                sum += x;
+                            }
+                            Console.WriteLine(sum);
+
+
+             To review, we declared an array and a variable sum that will hold the sum of the elements.
+             Next, we utilized a foreach loop to iterate through each element of the array, adding the corresponding element's value to the sum variable.
+
+             */
+
+            // add 4, then 1, then 3 to get 8
+            int[ ] arr = { 8, 2, 6};
+            int y = 0;
+            foreach (int x in arr)
+            {
+                y += x / 2;
+            }
+            Console.Write(y);
+
         }
     }
 }
