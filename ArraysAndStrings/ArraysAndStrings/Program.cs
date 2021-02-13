@@ -82,11 +82,40 @@ namespace ArraysAndStrings
              */
 
             // print all elements of an array of integers with 0 values
-            int[] arr = new int[7];
-            for (int k = 0; k < 7; k++)
+            //int[] arr = new int[7];
+            //for (int k = 0; k < 7; k++)
+            //{
+            //    Console.WriteLine(arr[k]);
+            //}
+
+
+            /*
+             The foreach loop provides a shorter and easier way of accessing array elements.
+             The previous example of accessing the elements could be written using a foreach loop:
+
+                foreach (int k in a) {
+                    Console.WriteLine(k);
+                }
+
+             The foreach loop iterates through the array a and assigns the value of the current element to the variable k at each iteration of the loop. So, at the first iteration, k=a[0], at the second, k=a[1], etc.
+
+
+             The data type of the variable in the foreach loop should match the type of the array elements.
+             Often the keyword var is used as the type of the variable, as in: foreach (var k in a).
+             The compiler determines the appropriate type for var.
+             */
+
+            // Display even elements of int array using a foreach loop
+            int[] nums = { 5, 2, 3, 4, 7 };
+             foreach(var n in nums)
             {
-                Console.WriteLine(arr[k]);
+                if (n % 2 == 0)
+                {
+                    Console.WriteLine(n);
+                } 
             }
+
+
 
         }
     }
