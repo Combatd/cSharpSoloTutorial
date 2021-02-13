@@ -135,13 +135,13 @@ namespace ArraysAndStrings
              */
 
             // add 4, then 1, then 3 to get 8
-            int[ ] arr = { 8, 2, 6};
-            int y = 0;
-            foreach (int x in arr)
-            {
-                y += x / 2;
-            }
-            Console.Write(y);
+            //int[ ] arr = { 8, 2, 6};
+            //int y = 0;
+            //foreach (int x in arr)
+            //{
+            //    y += x / 2;
+            //}
+            //Console.Write(y);
 
 
 
@@ -224,6 +224,111 @@ namespace ArraysAndStrings
 
             // Declare jagged array tht contains 8 2-d arrays
             int[][,] a = new int[8][,];
+
+
+
+            /*
+             The Array class in C# provides various properties and methods to work with arrays.
+             For example, the Length and Rank properties return the number of elements and the number of dimensions of the array, respectively.
+             You can access them using the dot syntax, just like any class members:
+
+                    int[ ] arr = {2, 4, 7};
+            
+                    Console.WriteLine(arr.Length); 
+            
+                    Console.WriteLine(arr.Rank);
+
+
+
+             The Length property can be useful in for loops where you need to specify the number of times the loop should run.
+
+                    int[ ] arr = {2, 4, 7};
+                    for(int k=0; k<arr.Length; k++) {
+                        Console.WriteLine(arr[k]);
+                    }
+             
+
+             */
+
+
+
+            /*
+             There are a number of methods available for arrays.
+                Max returns the largest value.
+                Min returns the smallest value.
+                Sum returns the sum of all elements.
+
+
+                    int[ ] arr = { 2, 4, 7, 1};
+                    Console.WriteLine(arr.Max());
+                    Console.WriteLine(arr.Min());
+                    Console.WriteLine(arr.Sum());
+             */
+
+
+            /*
+            It’s common to think of strings as arrays of characters. In reality, strings in C# are objects.
+            When you declare a string variable, you basically instantiate an object of type String.
+            String objects support a number of useful properties and methods:
+            Length returns the length of the string.
+            IndexOf(value) returns the index of the first occurrence of the value within the string.
+            Insert(index, value) inserts the value into the string starting from the specified index.
+            Remove(index) removes all characters in the string from the specified index.
+            Replace(oldValue, newValue) replaces the specified value in the string.
+            Substring(index, length) returns a substring of the specified length, starting from the specified index. If length is not specified, the operation continues to the end of the string.
+            Contains(value) returns true if the string contains the specified value.
+
+
+            string a = "some text";
+            Console.WriteLine(a.Length);
+            //Outputs 9
+
+            Console.WriteLine(a.IndexOf('t'));
+            //Outputs 5
+
+             a = a.Insert(0, "This is ");
+            Console.WriteLine(a);
+            //Outputs "This is some text"
+
+            a = a.Replace("This is", "I am");
+            Console.WriteLine(a);
+            //Outputs "I am some text"
+
+            if(a.Contains("some"))
+                Console.WriteLine("found");
+            //Outputs "found"
+
+            a = a.Remove(4);
+            Console.WriteLine(a);
+            //Outputs "I am"
+
+            a = a.Substring(2);
+            Console.WriteLine(a);
+            //Outputs "am"
+
+            You can also access characters of a string by its index, just like accessing elements of an array:
+
+            string a = "some text";
+            Console.WriteLine(a[2]);
+
+             */
+
+            /*
+             Let's create a program that will take a string, replace all occurrences of the word "dog" with "cat" and output the first sentence only.
+
+            The code replaces all occurrences of "dog" with "cat". After that it takes a substring of the original string starting from the first index until the first occurrence of a period character.
+            We add one to the index of the period to include the period in the substring.
+             */
+            string text = "This is some text about a dog. The word dog appears in this text a number of times. This is the end.";
+            text = text.Replace("dog", "cat");
+            text = text.Substring(0, text.IndexOf(".") + 1);
+
+            Console.WriteLine(text);
+
+            /*
+             C# provides a solid collection of tools and methods to work and manipulate strings.
+             You could, for example, find the number of times a specific word appears in a book with ease, using those methods.
+             */
 
         }
     }
