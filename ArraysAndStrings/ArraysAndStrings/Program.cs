@@ -161,6 +161,70 @@ namespace ArraysAndStrings
             // Declare 2-d array of integers with 8 rows and 8 columns
             int[, ] chessBoard = new int[8, 8];
 
+
+
+
+            /*
+             We can initialize multidimensional arrays in the same way as single-dimensional arrays.
+
+             int[ , ] someNums = { {2, 3}, {5, 6}, {4, 6} };
+
+             This will create an array with three rows and two columns. Nested curly brackets are used to define values for each row.
+             To access an element of the array, provide both indexes. For example someNums[2, 0] will return the value 4, as it accesses the first column of the third row.
+             Let's create a program that will display the values of the array in the form of a table.
+
+                         int[ , ] someNums = { {2, 3}, {5, 6}, {4, 6} }; 
+                        for (int k = 0; k < 3; k++) {
+                            for (int j = 0; j < 2; j++) {
+                                Console.Write(someNums[k, j]+" ");
+                            }
+                            Console.WriteLine();
+                        }
+
+
+                        2 3
+                        5 6
+                        4 6
+
+
+
+                We have used two nested for loops, one to iterate through the rows and one through the columns.
+                The Console.WriteLine(); statement moves the output to a new line after one row is printed.
+
+
+                Arrays can have any number of dimensions, but keep in mind that arrays with more than three dimensions are harder to manage.
+             */
+
+
+
+
+            /*
+             A jagged array is an array whose elements are arrays.
+             So it is basically an array of arrays.
+             The following is a declaration of a single-dimensional array that has three elements, each of which is a single-dimensional array of integers:
+
+                int[ ][ ] jaggedArr = new int[3][ ];
+
+             Each dimension is an array, so you can also initialize the array upon declaration like this:
+
+                int[ ][ ] jaggedArr = new int[ ][ ] 
+                {
+                  new int[ ] {1,8,2,7,9},
+                  new int[ ] {2,4,6},
+                  new int[ ] {33,42}
+                };
+
+
+
+
+                A jagged array is an array-of-arrays, so an int[ ][ ] is an array of int[ ], each of which can be of different lengths and occupy their own block in memory.
+                A multidimensional array (int[,]) is a single block of memory (essentially a matrix). It always has the same amount of columns for every row.
+             */
+
+
+            // Declare jagged array tht contains 8 2-d arrays
+            int[][,] a = new int[8][,];
+
         }
     }
 }
