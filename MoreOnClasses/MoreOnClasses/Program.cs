@@ -208,7 +208,63 @@ namespace MoreOnClasses
              meaning it refers to the current object.
              One of the common uses of this is to distinguish class members from other data,
              such as local or formal parameters of a method
+
+             Another common use of this is for passing the current instance to a method as parameter: ShowPersonInfo(this);
              */
+
+            /*
+             The readonly modifier prevents a member of a class from being modified after construction.
+             It means that the field declared as readonly can be modified only when you declare it or from within a constructor.
+
+             If we try to modify the name field anywhere else, we will get an error.
+             There are three major differences between readonly and const fields.
+             First, a constant field must be initialized when it is declared, whereas a readonly field can be declared without initialization, as in:
+
+             readonly string name; // OK
+             const double PI; // Error
+             */
+
+
+
+            /*
+             Second, a readonly field value can be changed in a constructor, but a constant value cannot.
+             Third, the readonly field can be assigned a value that is a result of a calculation, but constants cannot, as in:
+
+             readonly double a = Math.Sin(60); // OK
+             const double b = Math.Sin(60); // Error! 
+
+
+             The readonly modifier prevents a member of a class from being modified after construction.
+             */
+
+
+
+            /*
+              An indexer allows objects to be indexed like an array.
+              As discussed earlier, a string variable is actually an object of the String class.
+              Further, the String class is actually an array of Char objects.
+              In this way, the string class implements an indexer so we can access any character (Char object) by its index:
+
+             string str = "Hello World";
+             char x = str[4];
+             Console.WriteLine(x);
+             */
+
+
+            /*
+             Declaration of an indexer is to some extent similar to a property. The difference is that indexer accessors require an index.
+             Like a property, you use get and set accessors for defining an indexer. However, where properties return or set a specific data member, indexers return or set a particular value from the object instance.
+             Indexers are defined with the this keyword.
+
+          
+             */
+
+            // Now, when we declare an object of class Clients, we use an index to refer to specific objects like the elements of an array:
+            Clients c = new Clients();
+            c[0] = "Dave";
+            c[1] = "Bob";
+
+            Console.WriteLine(c[1]);
 
 
         }
@@ -233,11 +289,29 @@ namespace MoreOnClasses
 
         class Person
         {
-            private string name;
+            private readonly string name;
             public Person(string name)
             { // this.name represents the member of the class, whereas name represents the parameter of the constructor.
                 this.name = name;
             }
         }
+
+        class Clients
+        { // As you can see, the indexer definition includes the this keyword and an index, which is used to get and set the appropriate value.
+            private string[] names = new string[10];
+
+            public string this[int index]
+            {
+                get
+                {
+                    return names[index];
+                }
+                set
+                {
+                    names[index] = value;
+                }
+            }
+        }
+
     }
 }
