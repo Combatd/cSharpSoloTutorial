@@ -50,6 +50,148 @@ namespace InheritanceAndPolymorphism
              However, you can use interfaces to implement multiple inheritance. You will learn more about interfaces in the coming lessons.
              */
 
+            /*
+             Up to this point, we have worked exclusively with public and private access modifiers.
+             Public members may be accessed from anywhere outside of the class, while access to private members is limited to their class.
+             The protected access modifier is very similar to private with one difference; it can be accessed in the derived classes.
+             So, a protected member is accessible only from derived classes.
+
+
+
+                     class Person {
+                        protected int Age {get; set;}
+                        protected string Name {get; set;}
+                    }
+                    class Student : Person {
+                        public Student(string nm) {
+                            Name = nm;
+                        }
+                        public void Speak() {
+                            Console.Write("Name: "+Name);
+                        }
+                    }
+                    static void Main(string[] args)
+                    {
+                        Student s = new Student("David");
+                        s.Speak();
+                    }
+
+                  As you can see, we can access and modify the Name property of the base class from the derived class.
+                  But, if we try to access it from outside code, we will get an error:
+
+                          static void Main(string[] args)
+                            {
+                                Student s = new Student("David");
+                                s.Name = "Bob"; // Error
+                            }
+             */
+
+
+
+            /*
+             A class can prevent other classes from inheriting it, or any of its members, by using the sealed modifier.
+
+                        sealed class Animal {
+                            //some code
+                        }
+                        class Dog : Animal { } //Error
+
+            In this case, we cannot derive the Dog class from the Animal class because Animal is sealed.
+
+            The sealed keyword provides a level of protection to your class so that other classes cannot inherit from it.
+             */
+
+
+
+
+            /*
+             Constructors are called when objects of a class are created.
+             With inheritance, the base class constructor and destructor are not inherited, so you should define constructors for the derived classes.
+             However, the base class constructor and destructor are being invoked automatically when an object of the derived class is created or deleted.
+
+             class Animal {
+              public Animal() {
+                Console.WriteLine("Animal created");
+              }
+              ~Animal() {
+                Console.WriteLine("Animal deleted");
+              }
+            }
+            class Dog: Animal {
+              public Dog() {
+                Console.WriteLine("Dog created");
+              }
+              ~Dog() {
+                Console.WriteLine("Dog deleted");
+              }
+            }
+
+
+            We have defined the Animal class with a constructor and destructor and a derived Dog class with its own constructor and destructor.
+
+             */
+
+
+
+            /*
+             Let's create a Dog object:
+
+             Dog d = new Dog();
+
+                Note that the base class constructor is called first and the derived class constructor is called next.
+                When the object is destroyed, the derived class destructor is invoked and then the base class destructor is invoked.
+
+                You can think of it as the following:
+                The derived class needs its base class in order to work, which is why the base class constructor is called first.
+             */
+
+
+            /*
+             The word polymorphism means "having many forms".
+             Typically, polymorphism occurs when there is a hierarchy of classes and they are related through inheritance from a common base class.
+             Polymorphism means that a call to a member method will cause a different implementation to be executed depending on the type of object that invokes the method.
+
+             Simply, polymorphism means that a single method can have a number of different implementations.
+
+             */
+
+            /*
+             Consider having a program that allows users to draw different shapes. Each shape is drawn differently, and you do not know which shape the user will choose.
+             Here, polymorphism can be leveraged to invoke the appropriate Draw method of any derived class by overriding the same method in the base class. Such methods must be declared using the virtual keyword in the base class.
+
+             class Shape {
+              public virtual void Draw() {
+                Console.Write("Base Draw");
+              }
+            }
+
+
+            The virtual keyword allows methods to be overridden in derived classes.
+
+
+            Virtual methods enable you to work with groups of related objects in a uniform way.
+             */
+
+
+            /*
+             Now, we can derive different shape classes that define their own Draw methods using the override keyword.
+
+
+             The virtual Draw method in the Shape base class can be overridden in the derived classes.
+             In this case, Circle and Rectangle have their own Draw methods.
+             Now, we can create separate Shape objects for each derived type and then call their Draw methods:
+             
+             */
+
+            Shape c = new Circle();
+            c.Draw();
+
+            Shape r = new Rectangle();
+            r.Draw();
+
+            // As you can see, each object invoked its own Draw method, thanks to polymorphism.
+
+
         }
     }
 
@@ -83,6 +225,32 @@ namespace InheritanceAndPolymorphism
     class Student : Person
     {
         int number;
+    }
+
+    class Shape
+    {
+        public virtual void Draw()
+        {
+            Console.Write("Base Draw");
+        }
+    }
+
+    class Circle : Shape
+    {
+        public override void Draw()
+        {
+            // draw a circle...
+            Console.WriteLine("Circle Draw");
+        }
+    }
+
+    class Rectangle : Shape
+    {
+        public override void Draw()
+        {
+            // draw a rectangle...
+            Console.WriteLine("Rect Draw");
+        }
     }
 
 }
