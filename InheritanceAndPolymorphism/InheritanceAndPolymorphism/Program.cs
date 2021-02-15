@@ -34,6 +34,22 @@ namespace InheritanceAndPolymorphism
              And the derived class can be customized by adding more members.
              In this manner, the derived class extends the functionality of the base class.
              */
+
+
+
+            /*
+             A derived class inherits all the members of the base class, including its methods
+
+             We created a Student object and called the Speak method, which was declared in the base class Person.
+             */
+            Student s = new Student();
+            s.Speak();
+
+            /*
+             C# does not support multiple inheritance, so you cannot inherit from multiple classes.
+             However, you can use interfaces to implement multiple inheritance. You will learn more about interfaces in the coming lessons.
+             */
+
         }
     }
 
@@ -55,6 +71,18 @@ namespace InheritanceAndPolymorphism
         {
             Console.Write("Woof");
         }
+    }
+
+    class Person
+    {
+        public void Speak()
+        {
+            Console.WriteLine("Hi there");
+        }
+    }
+    class Student : Person
+    {
+        int number;
     }
 
 }
