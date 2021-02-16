@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace Generics
 {
@@ -104,12 +104,12 @@ namespace Generics
 
             // Generic class methods are called the same as for any other object:
 
-            Stack<int> intStack = new Stack<int>();
-            intStack.Push(3);
-            intStack.Push(6);
-            intStack.Push(7);
+            //Stack<int> intStack = new Stack<int>();
+            //intStack.Push(3);
+            //intStack.Push(6);
+            //intStack.Push(7);
 
-            Console.WriteLine(intStack.Get(1)); // 6
+            //Console.WriteLine(intStack.Get(1)); // 6
 
 
 
@@ -252,28 +252,28 @@ Remember, you need to include the statement: using Systems.Collections.Generic; 
 
              */
 
-            SortedList<string, int> sl = new SortedList<string, int>();
+            //SortedList<string, int> sl = new SortedList<string, int>();
 
-            sl.Add("Solo", 59);
-            sl.Add("A", 95);
-            sl.Add("Learn", 72);
-            sl.Remove("A");
+            //sl.Add("Solo", 59);
+            //sl.Add("A", 95);
+            //sl.Add("Learn", 72);
+            //sl.Remove("A");
 
-            Console.WriteLine("Sorted List: ");
-            foreach (string s in sl.Keys)
-                Console.WriteLine(s + ": " + sl[s]);  // Learn: 72  Solo: 59
-            Console.WriteLine("\nCount: " + sl.Count);  // 2
+            //Console.WriteLine("Sorted List: ");
+            //foreach (string str in sl.Keys)
+            //    Console.WriteLine(str + ": " + sl[str]);  // Learn: 72  Solo: 59
+            //Console.WriteLine("\nCount: " + sl.Count);  // 2
 
 
-            SortedList<string, int> pupil = new SortedList<string, int>();
-            pupil.Add("Bob", 11);
-            pupil.Add("Ann", 9);
-            pupil.Add("Mike", 12);
-            pupil.Remove("Ann");
-            foreach (string s in pupil.Keys)
-            {
-                Console.WriteLine(s + ": " + pupil[s]);
-            }
+            //SortedList<string, int> pupil = new SortedList<string, int>();
+            //pupil.Add("Bob", 11);
+            //pupil.Add("Ann", 9);
+            //pupil.Add("Mike", 12);
+            //pupil.Remove("Ann");
+            //foreach (string s in pupil.Keys)
+            //{
+            //    Console.WriteLine(s + ": " + pupil[s]);
+            //}
 
 
 
@@ -314,6 +314,53 @@ Remember, you need to include the statement: using Systems.Collections.Generic; 
             PrintBarr("ba1 AND ba2", ba1.And(ba2));
             PrintBarr("    NOT ba2", ba2.Not());
 
+
+
+            /*
+             A stack is a Last In, First Out (LIFO) collection of elements where the last element that goes into the stack will be the first element that comes out.
+
+             Inserting an element onto a stack is called pushing. Deleting an element from a stack is called popping.
+             Pushing and popping can be performed only at the top of the stack.
+
+             Stacks can be used to create undo-redo functionalities, parsing expressions (infix to postfix/prefix conversion), and much more.
+
+             The C# generic collection Stack<T> class requires all elements to be of the same type T.
+
+            Stack<T> properties include:
+            Count - Returns the number of elements in the stack.
+
+            Stack<T> methods include:
+            Peek() - Returns the element at the top of the stack without removing it.
+            Pop() - Returns the element at the top of the stack and removes it from the stack.
+            Push(T t) - Inserts an element t at the top of the stack.
+
+            Here are additional Stack<T> methods:
+            Clear() - Removes all the elements from the stack.
+            Contains(T t) - Returns true when the element t is present in the stack.
+            ToArray() - Copies the stack into a new array.
+
+             */
+
+            Stack<int> s = new Stack<int>();
+
+            s.Push(59);
+            s.Push(72);
+            s.Push(65);
+
+            Console.Write("Stack: ");
+            foreach (int i in s)
+                Console.Write(i + " ");  // 65  72  59
+            Console.Write("\nCount: " + s.Count);  // 3
+
+            Console.Write("\nTop: " + s.Peek());  // 65
+            Console.Write("\nPop: " + s.Pop());  // 65
+
+            Console.Write("\nStack: ");
+            foreach (int i in s)
+                Console.Write(i + " ");  // 72  59
+            Console.Write("\nCount: " + s.Count);  // 2
+
+
         }
 
         static void Func<T, U> (T x , U y)
@@ -321,20 +368,20 @@ Remember, you need to include the statement: using Systems.Collections.Generic; 
             Console.WriteLine(x + " " + y);
         }
 
-        class Stack<T>
-        {
-            int index = 0;
-            T[] innerArray = new T[100];
-            public void Push(T item)
-            {
-                innerArray[index++] = item;
-            }
-            public T Pop()
-            {
-                return innerArray[--index];
-            }
-            public T Get(int k) { return innerArray[k]; }
-        }
+        //class Stack<T>
+        //{
+        //    int index = 0;
+        //    T[] innerArray = new T[100];
+        //    public void Push(T item)
+        //    {
+        //        innerArray[index++] = item;
+        //    }
+        //    public T Pop()
+        //    {
+        //        return innerArray[--index];
+        //    }
+        //    public T Get(int k) { return innerArray[k]; }
+        //}
 
         // Define generic class Store with generic data member x that is initialized in constructor
         class Store <T>
