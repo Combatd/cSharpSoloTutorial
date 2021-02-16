@@ -361,6 +361,48 @@ Remember, you need to include the statement: using Systems.Collections.Generic; 
             Console.Write("\nCount: " + s.Count);  // 2
 
 
+
+
+            /*
+             A queue is a First In, First Out (FIFO) collection of elements where the first element that goes into a queue is also the first element that comes out.
+
+            Inserting an element into a queue is referred to as Enqueue. Deleting an element from a queue is referred to as Dequeue.
+            Queues are used whenever we need to manage objects in order starting with the first one in.
+            Scenarios include printing documents on a printer, call center systems answering people on hold people, and so on.
+            The C# generic collection Queue<T> class requires that all elements be of the same type T.
+
+            Queue<T> properties include:
+            Count - Gets the number of elements in the queue.
+
+            And methods include:
+            Dequeue() - Returns the object at the beginning of the queue and also removes it.
+            Enqueue(T t) - Adds the object t to the end of the queue.
+
+            Here are additional Queue<T> methods:
+            Clear() - Removes all objects from the queue.
+            Contains(T t) - Returns true when the element t is present in the queue.
+            Peek() - Returns the object at the beginning of the queue without removing it.
+            ToArray() - Copies the queue into a new array.
+             */
+
+            Queue<int> q = new Queue<int>();
+
+            q.Enqueue(5);
+            q.Enqueue(10);
+            q.Enqueue(15);
+            Console.Write("Queue: ");
+            foreach (int i in q)
+                Console.Write(i + " ");  // 5  10  15
+            Console.Write("\nCount: " + q.Count);  // 3
+
+            Console.Write("\nDequeue: " + q.Dequeue()); // 5
+
+            Console.Write("\nQueue: ");
+            foreach (int i in q)
+                Console.Write(i + " ");  // 10  15
+            Console.Write("\nCount: " + q.Count);  // 2
+
+
         }
 
         static void Func<T, U> (T x , U y)
