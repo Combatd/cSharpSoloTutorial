@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 
 namespace Generics
 {
@@ -273,7 +274,45 @@ Remember, you need to include the statement: using Systems.Collections.Generic; 
             {
                 Console.WriteLine(s + ": " + pupil[s]);
             }
-                
+
+
+
+
+            /*
+             A bit array is a collection of bits. The value of a bit can be either 0 (off/false) or 1 (on/true).
+            Bit arrays compactly store bits. Most commonly, they are used to represent a simple group of boolean flags or an ordered sequence of boolean values.
+
+            BitArray properties include:
+            Count - Gets the number of bits in the bit array.
+            IsReadOnly - Gets a value indicating if the bit array is read only or not.
+
+            BitArray methods include:
+            Get(int i) - Gets the value of the bit at a specified position i in the bit array.
+            Set(int i, bool value) - Sets the bit at a specified position i to a specified value in the bit array.
+            SetAll(bool value) - Sets all the bits to a specified value in the bit array.
+            And(BitArray ba) - Performs the bitwise AND operation on the elements of the bit array object with a specified bit array ba.
+            Or(BitArray ba) - Performs the bitwise OR operation on the elements of the bit array and the specified bit array ba.
+            Not() - Inverts the bit values of the bit array.
+            Xor(BitArray ba) - Performs the bitwise XOR operation on the elements of the current bit array object and the elements in the specified bit array ba.
+
+            For example, BitArrays can be used in image processing to store the individual bits of a gray-scale image.
+             */
+
+            BitArray ba1 = new BitArray(4);
+            BitArray ba2 = new BitArray(4);
+
+            ba1.SetAll(true);
+            ba2.SetAll(false);
+
+            ba1.Set(2, false);
+            ba2.Set(3, true);
+
+            PrintBarr("ba1", ba1);
+            PrintBarr("ba2", ba2);
+            Console.WriteLine();
+
+            PrintBarr("ba1 AND ba2", ba1.And(ba2));
+            PrintBarr("    NOT ba2", ba2.Not());
 
         }
 
@@ -305,6 +344,14 @@ Remember, you need to include the statement: using Systems.Collections.Generic; 
             {
                 x = val;
             }
+        }
+
+        static void PrintBarr(string name, BitArray ba)
+        {
+            Console.Write(name + " : ");
+            for (int x = 0; x < ba.Length; x++)
+                Console.Write(ba.Get(x) + " ");
+            Console.WriteLine();
         }
 
     }
