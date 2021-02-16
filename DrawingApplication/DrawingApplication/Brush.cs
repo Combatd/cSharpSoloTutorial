@@ -1,10 +1,12 @@
 ﻿using System;
 namespace DrawingApplication
 {
-    public class Brush
+    public class Brush : Draw
     {
-        public Brush()
+        public override void StartDraw()
         {
+            Console.WriteLine("Using brush");
         }
+
     }
 }

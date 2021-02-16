@@ -1,10 +1,11 @@
 ﻿using System;
 namespace DrawingApplication
 {
-    public class Spray
+    public class Spray : Draw
     {
-        public Spray()
+        public override void StartDraw()
         {
+            Console.WriteLine("Using spray");
         }
     }
 }
