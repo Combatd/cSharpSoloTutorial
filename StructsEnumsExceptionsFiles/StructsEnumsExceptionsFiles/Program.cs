@@ -262,6 +262,13 @@ namespace StructsEnumsExceptionsFiles
             Move() - moves a specified file to a new location
 
             All methods automatically close the file after performing the operation.
+
+            Check if names.txt exists, add David to the end of the file
+
+            if (File.Exists(names.txt)) {
+                File.AppendAllText("names.txt", David);
+            }
+
              */
 
 
