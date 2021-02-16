@@ -23,7 +23,7 @@ namespace RobotBarmen
                 int drinks = Convert.ToInt32(Console.ReadLine());
                 int shelves = Convert.ToInt32(Console.ReadLine());
 
-                //your code goes here
+                Console.WriteLine(drinks / shelves);
 
             }
             /*
@@ -33,12 +33,12 @@ namespace RobotBarmen
 
             catch (DivideByZeroException)
             {
-
+                Console.WriteLine("At least 1 shelf");
             }
 
             catch (FormatException)
             {
-
+                Console.WriteLine("Please insert an integer");
             }
 
         }
