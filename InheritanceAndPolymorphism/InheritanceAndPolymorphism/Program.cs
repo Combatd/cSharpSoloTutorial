@@ -229,30 +229,70 @@ namespace InheritanceAndPolymorphism
             abstract class Shape {
                public abstract void Draw();
             }
+
+            As you can see, the Draw method is abstract and thus has no body. You do not even need the curly brackets; just end the statement with a semicolon.
+            The Shape class itself must be declared abstract because it contains an abstract method. Abstract method declarations are only permitted in abstract classes.
+
+
+            Remember, abstract method declarations are only permitted in abstract classes.
+            Members marked as abstract, or included in an abstract class, must be implemented by classes that derive from the abstract class. An abstract class can have multiple abstract members.
+
              */
 
+
+            /*
+             An abstract class is intended to be a base class of other classes. It acts like a template for its derived classes.
+             Now, having the abstract class, we can derive the other classes and define their own Draw() methods:
+
+                     abstract class Shape {
+                    public abstract void Draw();
+                    }
+                    class Circle : Shape {
+                        public override void Draw() {
+                            Console.WriteLine("Circle Draw");
+                        }
+                    }
+                    class Rectangle : Shape {
+                        public override void Draw() {
+                            Console.WriteLine("Rect Draw");
+                        }
+                    }
+
+              Abstract classes have the following features:
+            - An abstract class cannot be instantiated.
+            - An abstract class may contain abstract methods and accessors.
+            - A non-abstract class derived from an abstract class must include actual implementations of all inherited abstract methods and accessors.
+
+
+            It is not possible to modify an abstract class with the sealed modifier because the two modifiers have opposite meanings.
+            The sealed modifier prevents a class from being inherited and the abstract modifier requires a class to be inherited.
+
+             */
+
+
+
         }
     }
 
 
-    class Animal
-    {
-        public int Legs { get; set; }
-        public int Age { get; set; }
-    }
+    //class Animal
+    //{
+    //    public int Legs { get; set; }
+    //    public int Age { get; set; }
+    //}
 
-    class Dog : Animal
-    {
-        public Dog()
-        {
-            Legs = 4;
-        }
+    //class Dog : Animal
+    //{
+    //    public Dog()
+    //    {
+    //        Legs = 4;
+    //    }
 
-        public void Bark()
-        {
-            Console.Write("Woof");
-        }
-    }
+    //    public void Bark()
+    //    {
+    //        Console.Write("Woof");
+    //    }
+    //}
 
     class Person
     {
@@ -289,6 +329,20 @@ namespace InheritanceAndPolymorphism
         {
             // draw a rectangle...
             Console.WriteLine("Rect Draw");
+        }
+    }
+
+    // Create an abstract class with an abstract method and then use it as a base class
+    abstract class Animal
+    {
+        public abstract void Eat(); // abstract method to be implemented later
+    }
+
+    class Dog : Animal
+    {
+        public override void Eat()
+        {
+            Console.WriteLine("Omnomnom");
         }
     }
 
