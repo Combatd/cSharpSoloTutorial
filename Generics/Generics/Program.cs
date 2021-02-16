@@ -122,5 +122,15 @@ namespace Generics
             public T Get(int k) { return innerArray[k]; }
         }
 
+        // Define generic class Store with generic data member x that is initialized in constructor
+        class Store <T>
+        {
+            T x;
+            public Store(T val)
+            {
+                x = val;
+            }
+        }
+
     }
 }
