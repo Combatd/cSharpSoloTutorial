@@ -271,6 +271,68 @@ namespace InheritanceAndPolymorphism
 
 
 
+
+            /*
+             An interface is a completely abstract class, which contains only abstract members.
+             It is declared using the interface keyword:
+
+
+
+                public interface IShape
+                {
+                  void Draw();
+                }
+
+
+            All members of the interface are by default abstract, so no need to use the abstract keyword.
+            Also, all members of an interface are always public, and no access modifiers can be applied to them.
+
+
+            It is common to use the capital letter I as the starting letter for an interface name.
+            Interfaces can contain properties, methods, etc. but cannot contain fields (variables).
+
+
+             */
+
+
+
+
+            /*
+             When a class implements an interface, it must also implement, or define, all of its methods.
+
+             The term implementing an interface is used (opposed to the term "inheriting from") to describe the process of creating a class based on an interface.
+             The interface simply describes what a class should do.
+             The class implementing the interface must define how to accomplish the behaviors.
+
+             The syntax to implement an interface is the same as that to derive a class:
+
+                     public interface IShape {
+                        void Draw();
+                    }
+                    class Circle : IShape {
+                        public void Draw() {
+                            Console.WriteLine("Circle Draw");
+                        }
+                    }
+                    static void Main(string[] args)
+                    {
+                        IShape c = new Circle();
+                        c.Draw();
+                    }
+
+             Note, that the override keyword is not needed when you implement an interface.
+
+
+            But why use interfaces rather than abstract classes?
+            A class can inherit from just one base class, but it can implement multiple interfaces!
+            Therefore, by using interfaces you can include behavior from multiple sources in a class.
+            To implement multiple interfaces, use a comma separated list of interfaces when creating the class: class A: IShape, IAnimal, etc.
+
+
+             */
+
+
+
         }
     }
 
@@ -333,14 +395,29 @@ namespace InheritanceAndPolymorphism
     }
 
     // Create an abstract class with an abstract method and then use it as a base class
-    abstract class Animal
+    //abstract class Animal
+    //{
+    //    public abstract void Eat(); // abstract method to be implemented later
+    //}
+
+    //class Dog : Animal
+    //{
+    //    public override void Eat()
+    //    {
+    //        Console.WriteLine("Omnomnom");
+    //    }
+    //}
+
+    // Create an interface and implement it
+
+    interface IAnimal
     {
-        public abstract void Eat(); // abstract method to be implemented later
+        void Eat();
     }
 
-    class Dog : Animal
+    class Dog : IAnimal
     {
-        public override void Eat()
+        public void Eat()
         {
             Console.WriteLine("Omnomnom");
         }
