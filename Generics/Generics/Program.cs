@@ -225,6 +225,45 @@ Remember, you need to include the statement: using Systems.Collections.Generic; 
             for (int x = 0; x < li.Count; x++)
                 Console.Write(li[x] + " "); // 5  9  59  95
 
+
+            /*
+             A sorted list is a collection of key/value pairs that are sorted by key. A key can be used to access its corresponding value in the sorted list.
+
+            The C# generic collection SortedList<K, V> class requires all element key/value pairs to be of the same type K, V. Duplicate keys are not permitted, which ensures that every key/value pair is unique.
+
+            SortedList<K, V> properties include:
+            Count - Gets the number of key/value pairs contained in the sorted list.
+            Item[K key] - Gets or sets the value associated the specified key contained in the sorted list. Item is the indexer and is not required when accessing an element. You only need to use the brackets [] and the key, value.
+            Keys - Gets a sorted and indexed collection containing only the keys in the sorted list.
+
+            SortedList<K, V> methods include:
+            Add(K key, V value) - Adds an element with a specific key, value pair into the sorted list.
+            Remove(K key) - Removes the element with the specific key, value pair associated with the specified key from the sorted list.
+
+
+            Here are additional SortedList<K, V> properties and methods:
+            Values - Gets a sorted and indexed collection of the values in the sorted list.
+            Clear() - Removes all the elements from the sorted list.
+            ContainsKey(K key) - Returns true when the specified key is present in the sorted list.
+            ContainsValue(V value) - Returns true when a specified value is present in the sorted list.
+            IndexOfKey(K key) - Returns the index of the specified key within the sorted list.
+            IndexOfValue(V value) - Returns the index of the specified value within the sorted list.
+
+             */
+
+            SortedList<string, int> sl = new SortedList<string, int>();
+
+            sl.Add("Solo", 59);
+            sl.Add("A", 95);
+            sl.Add("Learn", 72);
+            sl.Remove("A");
+
+            Console.WriteLine("Sorted List: ");
+            foreach (string s in sl.Keys)
+                Console.WriteLine(s + ": " + sl[s]);  // Learn: 72  Solo: 59
+            Console.WriteLine("\nCount: " + sl.Count);  // 2
+
+
         }
 
         static void Func<T, U> (T x , U y)
