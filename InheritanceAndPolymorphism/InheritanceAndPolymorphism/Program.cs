@@ -192,6 +192,45 @@ namespace InheritanceAndPolymorphism
             // As you can see, each object invoked its own Draw method, thanks to polymorphism.
 
 
+
+            /*
+             To summarize, polymorphism is a way to call the same method for different objects and generate different results based on the object type.
+             This behavior is achieved through virtual methods in the base class.
+             To implement this, we create objects of the base type, but instantiate them as the derived type:
+
+             Shape c = new Circle();
+
+             Shape is the base class. Circle is the derived class.
+             So why use polymorphism?
+             We could just instantiate each object of its type and call its method, as in:
+
+             Circle c = new Circle();
+             c.Draw();
+
+
+             The polymorphic approach allows us to treat each object the same way. As all objects are of type Shape, it is easier to maintain and work with them.
+             You could, for example, have a list (or array) of objects of that type and work with them dynamically, without knowing the actual derived type of each object.
+
+
+
+             Polymorphism can be useful in many cases. For example, we could create a game where we would have different Player types with each Player having a separate behavior for the Attack method.
+             In this case, Attack would be a virtual method of the base class Player and each derived class would override it.
+
+             */
+
+
+
+            /*
+             As described in the previous example, polymorphism is used when you have different derived classes with the same method, which has different implementations in each class. This behavior is achieved through virtual methods that are overridden in the derived classes.
+            In some situations there is no meaningful need for the virtual method to have a separate definition in the base class.
+            These methods are defined using the abstract keyword and specify that the derived classes must define that method on their own.
+            You cannot create objects of a class containing an abstract method, which is why the class itself should be abstract.
+
+            abstract class Shape {
+               public abstract void Draw();
+            }
+             */
+
         }
     }
 
