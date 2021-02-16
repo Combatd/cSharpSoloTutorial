@@ -264,6 +264,17 @@ Remember, you need to include the statement: using Systems.Collections.Generic; 
             Console.WriteLine("\nCount: " + sl.Count);  // 2
 
 
+            SortedList<string, int> pupil = new SortedList<string, int>();
+            pupil.Add("Bob", 11);
+            pupil.Add("Ann", 9);
+            pupil.Add("Mike", 12);
+            pupil.Remove("Ann");
+            foreach (string s in pupil.Keys)
+            {
+                Console.WriteLine(s + ": " + pupil[s]);
+            }
+                
+
         }
 
         static void Func<T, U> (T x , U y)
