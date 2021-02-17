@@ -24,8 +24,17 @@ namespace CoffeeTime
             coffee.Add("Cappuccino", 80);
             coffee.Add("Mocha", 90);
 
+            
 
+            foreach(string flavor in coffee.Keys)
+            {
+                Console.WriteLine(discountPrice(flavor, coffee[flavor], discount));
+            }
+        }
 
+        static string discountPrice(string flavor , int price, int discount)
+        {
+            return $"{flavor}: {price - price * discount / 100}";
         }
     }
 }
